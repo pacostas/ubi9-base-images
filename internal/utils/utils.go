@@ -36,7 +36,7 @@ func GenerateBuilder(buildImage string, runImage string, registryUrl string) (bu
 
 	_, err = fmt.Fprintf(builderConfigFile, `
 			[stack]
-			  id = "io.buildpacks.stacks.ubi8"
+			  id = "io.buildpacks.stacks.ubi9"
 			  build-image = "%s:latest"
 			  run-image = "%s:latest"
 			`, buildImageUrl, runImageUrl)

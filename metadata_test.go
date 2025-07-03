@@ -64,11 +64,11 @@ func testMetadata(t *testing.T, context spec.G, it spec.S) {
 				Expect(err).NotTo(HaveOccurred())
 
 				Expect(file.Config.Labels).To(SatisfyAll(
-					HaveKeyWithValue("io.buildpacks.stack.id", "io.buildpacks.stacks.ubi8"),
-					HaveKeyWithValue("io.buildpacks.stack.description", "base build ubi8 image to support buildpacks"),
+					HaveKeyWithValue("io.buildpacks.stack.id", "io.buildpacks.stacks.ubi9"),
+					HaveKeyWithValue("io.buildpacks.stack.description", "base build ubi9 image to support buildpacks"),
 					HaveKeyWithValue("io.buildpacks.stack.distro.name", "rhel"),
-					HaveKeyWithValue("io.buildpacks.stack.distro.version", MatchRegexp(`8\.\d+`)),
-					HaveKeyWithValue("io.buildpacks.stack.homepage", "https://github.com/paketo-buildpacks/ubi8-base-stack"),
+					HaveKeyWithValue("io.buildpacks.stack.distro.version", MatchRegexp(`9\.\d+`)),
+					HaveKeyWithValue("io.buildpacks.stack.homepage", "https://github.com/paketo-buildpacks/ubi9-base-stack"),
 					HaveKeyWithValue("io.buildpacks.stack.maintainer", "Paketo Community"),
 					HaveKeyWithValue("io.buildpacks.stack.metadata", MatchJSON("{}")),
 				))
@@ -88,7 +88,7 @@ func testMetadata(t *testing.T, context spec.G, it spec.S) {
 				Expect(file.Config.Env).To(ContainElements(
 					"CNB_USER_ID=1002",
 					"CNB_GROUP_ID=1000",
-					"CNB_STACK_ID=io.buildpacks.stacks.ubi8",
+					"CNB_STACK_ID=io.buildpacks.stacks.ubi9",
 				))
 			})
 		}
@@ -112,22 +112,22 @@ func testMetadata(t *testing.T, context spec.G, it spec.S) {
 				Expect(err).NotTo(HaveOccurred())
 
 				Expect(file.Config.Labels).To(SatisfyAll(
-					HaveKeyWithValue("io.buildpacks.stack.id", "io.buildpacks.stacks.ubi8"),
+					HaveKeyWithValue("io.buildpacks.stack.id", "io.buildpacks.stacks.ubi9"),
 					HaveKeyWithValue("io.buildpacks.stack.distro.name", "rhel"),
-					HaveKeyWithValue("io.buildpacks.stack.distro.version", MatchRegexp(`8\.\d+`)),
-					HaveKeyWithValue("io.buildpacks.stack.homepage", "https://github.com/paketo-buildpacks/ubi8-base-stack"),
+					HaveKeyWithValue("io.buildpacks.stack.distro.version", MatchRegexp(`9\.\d+`)),
+					HaveKeyWithValue("io.buildpacks.stack.homepage", "https://github.com/paketo-buildpacks/ubi9-base-stack"),
 					HaveKeyWithValue("io.buildpacks.stack.maintainer", "Paketo Community"),
 					HaveKeyWithValue("io.buildpacks.stack.metadata", MatchJSON("{}")),
 				))
 
 				if imageInfo.Name == "default" {
 					Expect(file.Config.Labels).To(SatisfyAll(
-						HaveKeyWithValue("io.buildpacks.stack.description", fmt.Sprintf("base %s ubi8 image to support buildpacks", imageInfo.RunImage)),
+						HaveKeyWithValue("io.buildpacks.stack.description", fmt.Sprintf("base %s ubi9 image to support buildpacks", imageInfo.RunImage)),
 					))
 
 				} else {
 					Expect(file.Config.Labels).To(SatisfyAll(
-						HaveKeyWithValue("io.buildpacks.stack.description", fmt.Sprintf("ubi8 %s image to support buildpacks", imageInfo.Name)),
+						HaveKeyWithValue("io.buildpacks.stack.description", fmt.Sprintf("ubi9 %s image to support buildpacks", imageInfo.Name)),
 					))
 				}
 
@@ -149,10 +149,10 @@ func testMetadata(t *testing.T, context spec.G, it spec.S) {
 				))
 
 				Expect(image).To(HaveFileWithContent("/etc/os-release", SatisfyAll(
-					ContainLines(MatchRegexp(`PRETTY_NAME=\"Red Hat Enterprise Linux 8\.\d+ \(Ootpa\)\"`)),
-					ContainSubstring(`HOME_URL="https://github.com/paketo-buildpacks/ubi8-base-stack"`),
-					ContainSubstring(`SUPPORT_URL="https://github.com/paketo-buildpacks/ubi8-base-stack/blob/main/README.md"`),
-					ContainSubstring(`BUG_REPORT_URL="https://github.com/paketo-buildpacks/ubi8-base-stack/issues/new"`),
+					ContainLines(MatchRegexp(`PRETTY_NAME=\"Red Hat Enterprise Linux 9\.\d+ \(Plow\)\"`)),
+					ContainSubstring(`HOME_URL="https://github.com/paketo-buildpacks/ubi9-base-stack"`),
+					ContainSubstring(`SUPPORT_URL="https://github.com/paketo-buildpacks/ubi9-base-stack/blob/main/README.md"`),
+					ContainSubstring(`BUG_REPORT_URL="https://github.com/paketo-buildpacks/ubi9-base-stack/issues/new"`),
 				)))
 			})
 		}

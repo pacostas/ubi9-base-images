@@ -1,4 +1,4 @@
-module github.com/paketo-buildpacks/ubi8-base-stack
+module github.com/paketo-buildpacks/ubi-9-base-images
 
 go 1.24.4
 

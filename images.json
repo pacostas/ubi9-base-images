@@ -2,7 +2,7 @@
   "support_usns": false,
   "receipts_show_limit": 16,
   "platforms": ["linux/amd64", "linux/arm64", "linux/ppc64le", "linux/s390x"],
-  "os_codename": "ubi8",
+  "os_codename": "ubi9",
   "repo_type": "stack",
   "images": [
     {
@@ -12,19 +12,8 @@
       "build_image": "build",
       "run_image": "run",
       "create_build_image": true,
-      "base_build_container_image": "docker://registry.access.redhat.com/ubi8/ubi-minimal",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/ubi-minimal",
-      "stack_type": "base",
-      "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
-      "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
-    },
-    {
-      "name": "java-8",
-      "config_dir": "stacks/stack-java-8",
-      "output_dir": "builds/build-java-8",
-      "build_image": "build-java-8",
-      "run_image": "run-java-8",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/openjdk-8-runtime",
+      "base_build_container_image": "docker://registry.access.redhat.com/ubi9/ubi-minimal",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/ubi-minimal",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
@@ -35,7 +24,7 @@
       "output_dir": "builds/build-java-11",
       "build_image": "build-java-11",
       "run_image": "run-java-11",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/openjdk-11-runtime",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/openjdk-11-runtime",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
@@ -46,7 +35,7 @@
       "output_dir": "builds/build-java-17",
       "build_image": "build-java-17",
       "run_image": "run-java-17",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/openjdk-17-runtime",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/openjdk-17-runtime",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
@@ -57,41 +46,19 @@
       "output_dir": "builds/build-java-21",
       "build_image": "build-java-21",
       "run_image": "run-java-21",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/openjdk-21-runtime",
-      "stack_type": "base",
-      "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
-      "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
-    },
-    {
-      "name": "nodejs-16",
-      "config_dir": "stacks/stack-nodejs-16",
-      "output_dir": "builds/build-nodejs-16",
-      "build_image": "build-nodejs-16",
-      "run_image": "run-nodejs-16",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/nodejs-16-minimal",
-      "stack_type": "base",
-      "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
-      "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
-    },
-    {
-      "name": "nodejs-18",
-      "config_dir": "stacks/stack-nodejs-18",
-      "output_dir": "builds/build-nodejs-18",
-      "build_image": "build-nodejs-18",
-      "run_image": "run-nodejs-18",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/nodejs-18-minimal",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/openjdk-21-runtime",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
     },
     {
       "name": "nodejs-20",
-      "is_default_run_image": true,
+      "is_default_run_image": false,
       "config_dir": "stacks/stack-nodejs-20",
       "output_dir": "builds/build-nodejs-20",
       "build_image": "build-nodejs-20",
       "run_image": "run-nodejs-20",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/nodejs-20-minimal",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/nodejs-20-minimal",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"
@@ -103,7 +70,7 @@
       "output_dir": "builds/build-nodejs-22",
       "build_image": "build-nodejs-22",
       "run_image": "run-nodejs-22",
-      "base_run_container_image": "docker://registry.access.redhat.com/ubi8/nodejs-22-minimal",
+      "base_run_container_image": "docker://registry.access.redhat.com/ubi9/nodejs-22-minimal",
       "stack_type": "base",
       "pattern_image_registry_name": "build_image_run_image-os_codename-stack_type",
       "pattern_assets_prefix": "os_codename-stack_type-repo_type-version-arch-build_image_run_image"

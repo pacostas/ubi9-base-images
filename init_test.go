@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/paketo-buildpacks/occam"
-	utils "github.com/paketo-buildpacks/ubi8-base-stack/internal/utils"
+	utils "github.com/paketo-buildpacks/ubi-9-base-images/internal/utils"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 

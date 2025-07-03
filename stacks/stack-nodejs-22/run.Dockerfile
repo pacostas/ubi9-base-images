@@ -1,1 +1,1 @@
-FROM registry.access.redhat.com/ubi8/nodejs-22-minimal
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal
